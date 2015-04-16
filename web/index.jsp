@@ -6,6 +6,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a href="bookForm.jsp">Add a book</a>
+        <a href="bookForm.jsp">Add a book</a><br/>
+        <a href="initBookServlet">Init books</a><br/>
+        <a href="listAuthorsBookServlet">See authors</a><br/>
     </body>
 </html>
