@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block content %}
+
+{% if added %}
+  <div class="panel panel-default">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Book validation</h3>
+    </div>
+
+    <div class="panel-body">
+      <p>Title : {{ form.bookTitle.data }}</p>
+    	<p>Author : {{ form.bookAuthor.data }}</p>
+    	<p>Publication year : {{ form.bookYear.data }}</p>
+    </div>
+
+  </div>
+{% endif %}
+
+<div class="panel panel-default">
+
+  <div class="panel-heading">
+    <h3 class="panel-title">Add a new book</h3>
+  </div>
+
+  <div class="panel-body">
+
+    <form action="" method="post" name="addBook">
+
+      {{ form.hidden_tag() }}
+
+      <p class="form-group">
+        <label for="bookTitle">Title</label>
+        {{ form.bookTitle(class="form-control", placeholder="Enter book title") }}
+        {% for error in form.bookTitle.errors %}
+          <div class="label label-danger">{{ error }}</div>
+        {% endfor %}
+      </p>
+
+      <p class="form-group">
+        <label for="bookAuthor">Author</label>
+        {{ form.bookAuthor(class="form-control", placeholder="Enter book author") }}
+        {% for error in form.bookAuthor.errors %}
+          <div class="label label-danger">{{ error }}</div>
+        {% endfor %}
+      </p>
+
+      <p class="form-group">
+        <label for="bookYear">Publication year</label>
+        {{ form.bookYear(class="form-control", placeholder="Enter book publication year") }}
+        {% for error in form.bookYear.errors %}
+          <div class="label label-danger">{{ error }}</div>
+        {% endfor %}
+      </p>
+
+      <p><input type="submit" value="Add book"></p>
+
+    </form>
+
+  </div>
+
+</div
+{% endblock %}
