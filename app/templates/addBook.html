@@ -12,6 +12,14 @@
       <p>Title : {{ form.bookTitle.data }}</p>
     	<p>Author : {{ form.bookAuthor.data }}</p>
     	<p>Publication year : {{ form.bookYear.data }}</p>
+
+      <form action="{{ url_for('validateBook') }}" method="post">
+        <input type="hidden" name='title' value="{{ form.bookTitle.data }}">
+        <input type="hidden" name='author' value="{{ form.bookAuthor.data }}">
+        <input type="hidden" name='year' value="{{ form.bookYear.data }}">
+        <p><input type="submit" value="Validate"></p>
+      </form>
+
     </div>
 
   </div>

@@ -27,6 +27,24 @@ def getListAuthors():
             list.append(book.author)
     return list
 
+def getListBooks():
+    list = []
+    books = Book.query.all()
+    for book in books:
+        if(list.count(book.__repr__()) == 0):
+            list.append(book.__repr__())
+    return list
+
+def addBook(title, author, year):
+    if(not(Book.query.filter_by(title=title).first() is None)):
+        return False
+
+    b = Book(title, author, year);
+    db.session.add(b)
+    db.session.commit()
+
+    return True
+
 class Book(db.Model):
     '''
     Represents a Book in the database with its title, as primary key, author and publication year.
@@ -44,4 +62,4 @@ class Book(db.Model):
         '''
         Represents the book as a string
         '''
-        return "[{}] {} by {}".format(year, title, author)
+        return "[{}] {} by {}".format(self.year, self.title, self.author)

@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect
+from flask import render_template, flash, redirect, request
 from app import app, models
 from .forms import BookForm
 
@@ -25,6 +25,18 @@ def addBook():
                            title="Add a new book",
                            form=form)
 
+@app.route('/addBook/validate', methods=['GET', 'POST'])
+def validateBook():
+    '''
+    Validate the entered book and add it to the database
+    '''
+    print request.form['title']
+    if(models.addBook(request.form['title'], request.form['author'], request.form['year'])):
+        flash("Book successfully added to the database.")
+    else:
+        flash("Book already added to the database.")
+    return redirect("\index")
+
 @app.route('/initBooks')
 def initBooks():
     '''
@@ -43,3 +55,11 @@ def listAuthors():
     '''
     list = models.getListAuthors()
     return render_template("listAuthors.html", list=list)
+
+@app.route('/listBooks')
+def listBooks():
+    '''
+    Returns a list of the registered books as strings.
+    '''
+    list = models.getListBooks()
+    return render_template("listBooks.html", list=list)
