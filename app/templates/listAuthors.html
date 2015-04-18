@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Authors list</h3>
+  </div>
+  <div class="panel-body">
+    {% if list|length == 0 %}
+      <p>There is no books in the database</p>
+    {% else %}
+      <ul>
+        {% for author in list %}
+          <li>{{ author }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</div
+{% endblock %}

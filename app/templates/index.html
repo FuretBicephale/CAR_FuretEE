@@ -5,7 +5,9 @@
     <h3 class="panel-title">Index</h3>
   </div>
   <div class="panel-body">
-    <a href="{{ url_for('addBook') }}">Add a new book!</a>
+    <p><a href="{{ url_for('addBook') }}">Add a new book!</a></p>
+    <p><a href="{{ url_for('initBooks') }}">Initialize books!</a></p>
+    <p><a href="{{ url_for('listAuthors') }}">List authors!</a></p>
   </div>
 </div
 {% endblock %}

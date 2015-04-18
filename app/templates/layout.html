@@ -27,6 +27,14 @@
         <h1>The ferret bookseller: <a href="/index">Index</a></h1>
       </div>
 
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+              <p class="alert alert-info">{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
       {# Content of the page #}
       {% block content %}{% endblock %}
 
