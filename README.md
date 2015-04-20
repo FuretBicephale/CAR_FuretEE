@@ -18,8 +18,8 @@ Cette application est une simulation de vente, aucune commande n'est réelle.
 
 #### Utilisation
 
-L'application nécessite python 2 ainsi que Flask pour fonctionner.   
+L'application nécessite python 2 ainsi que Flask pour fonctionner.
 Le lancement de l'application peut necessiter l'installation de quelques modules python (requirements.txt à venir).
 
-Lancement de l'application : python run.py.
+Lancement de l'application : python run.py.   
 L'application web sera disponible à l'adresse suivante, en local : 127.0.0.1:5000.
