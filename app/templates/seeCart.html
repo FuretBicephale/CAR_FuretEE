@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    {% if cart|length > 0 %}<a href="{{ url_for('validateCart') }}" style="float:right">Validate your cart</a>{% endif %}
+    <h3 class="panel-title">Cart content</h3>
+  </div>
+  {% if cart|length == 0 %}
+    <div class="panel-body">
+      <p>There is no books in your cart</p>
+    </div>
+  {% else %}
+    <table class="table table-hover">
+      <th style="width:99%">Title</th>
+      <th style="white-space:nowrap">Remove from cart</th>
+      {% for book in cart %}
+        <tr>
+          <td style="width:99%">{{ book }}</td>
+          <td style="white-space:nowrap">
+            <a href="{{ url_for('removeBookFromCart') }}?bookTitle={{ book }}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+</div
+{% endblock %}
