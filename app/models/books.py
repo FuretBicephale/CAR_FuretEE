@@ -27,10 +27,19 @@ def getListAuthors():
             list.append(book.author)
     return list
 
-def getListBooks():
+def getListBooks(title = None, author = None, year = None):
     list = []
-    books = Book.query.all()
-    for book in books:
+    books = Book.query
+    print title
+    print author
+    print year
+    if(title != None and title != ""):
+        books = books.filter(Book.title.contains(title))
+    if(author != None and author != ""):
+        books = books.filter(Book.author.contains(author))
+    if(year != None and year != ""):
+        books = books.filter_by(year = year)
+    for book in books.all():
         list.append(book)
     return list
 

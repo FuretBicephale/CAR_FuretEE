@@ -4,16 +4,23 @@
   <div class="panel-heading">
     <h3 class="panel-title">Authors list</h3>
   </div>
-  <div class="panel-body">
-    {% if list|length == 0 %}
+  {% if list|length == 0 %}
+    <div class="panel-body">
       <p>There is no books in the database</p>
-    {% else %}
-      <ul>
-        {% for author in list %}
-          <li>{{ author }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  </div>
-</div
+    </div>
+  {% else %}
+    <table class="table table-hover">
+      <th style="width:99%">Author</th>
+      <th style="white-space:nowrap">See books</th>
+      {% for author in list %}
+        <tr>
+          <td style="width:99%">{{ author }}</td>
+          <td style="white-space:nowrap">
+            <a href="{{ url_for('listBooks') }}?author={{ author }}"><span class="glyphicon glyphicon-book" aria-hidden="true"></span></a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+</div>
 {% endblock %}

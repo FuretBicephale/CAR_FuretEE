@@ -50,10 +50,13 @@ def listAuthors():
     list = books.getListAuthors()
     return render_template("listAuthors.html", list=list)
 
-@app.route('/listBooks')
+@app.route('/listBooks', methods=['GET', 'POST'])
 def listBooks():
     '''
     Returns a list of the registered books as strings.
     '''
-    list = books.getListBooks()
+    title = request.args.get("title") or request.form.get("title")
+    author = request.args.get("author") or request.form.get("author")
+    year = request.args.get("year") or request.form.get("year")
+    list = books.getListBooks(title, author, year)
     return render_template("listBooks.html", list=list)
