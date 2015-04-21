@@ -10,9 +10,13 @@
 
     <p class="text-justify">L'utilisateur peut y choisir des livres parmi une liste complète pour les ajouter dans son panier. Il lui suffira alors de valider son panier afin de valider sa commande. L'utilisateur peut aussi lister les livres par auteur ou même effectuer une recherche par titre ou année. Enfin, l'utilisateur peut voir ses commandes passées.<p>
 
-    <p class="text-justify">Un administrateur du site peut ajouter des livres à la base de donnée ou en retirer, il peut aussi consulter la liste des commandes enregistrées.<p>
+    <p class="text-justify">Un administrateur du site peut ajouter des livres à la base de donnée ou en retirer.<p>
 
     <p class="text-justify">Cette application est une simulation de vente, aucune commande n'est réelle.</p>
+  </div>
+  <div  class="panel-body" style="text-align:center">
+    <a href="{{ url_for('initUsers') }}"><input type=submit value="Init users"></a>
+    <a href="{{ url_for('initBooks') }}"><input type=submit value="Init books"></a>
   </div>
 </div
 {% endblock %}

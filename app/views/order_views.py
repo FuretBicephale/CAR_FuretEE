@@ -1,7 +1,7 @@
 from flask import render_template, redirect, session, request, url_for, flash
 from app import app
 from app.views import main_views, book_views
-from app.models import orders
+from app.models import orders, users, books
 
 @app.route('/listBooks/addBookToCart')
 def addBookToCart():
@@ -34,9 +34,32 @@ def seeCart():
 
 @app.route('/seeCart/validateCart')
 def validateCart():
-    if(orders.addOrder(session["cart"])):
+    orderId = orders.addOrder(session["cart"])
+    if(orderId != -1):
+        if("user" in session):
+            users.User.query.filter_by(pseudo=session["user"]).first().addOrder(orderId)
+
         flash("Order successfully validated.")
         session["cart"] = []
     else:
         flash("Something went wrong.")
-    return redirect("index")
+    return redirect(url_for("index"))
+
+@app.route('/pastOrders')
+def pastOrders():
+    if("user" not in session):
+        return redirect(url_for("index"))
+
+    userOrders = users.User.query.filter_by(pseudo=session["user"]).first().orders.all()
+
+    return render_template("pastOrders.html", title="Past orders", userOrders=userOrders)
+
+@app.route('/pastOrders/details')
+def detailsOrder():
+    if("user" not in session):
+        return redirect(url_for("index"))
+
+    orderBooks = orders.Order.query.filter_by(id=request.args.get("order")).first().books.all()
+    detailsOrder = books.Book.query.filter(books.Book.title.in_([i.book_title for i in orderBooks])).all()
+
+    return render_template("detailsOrder.html", title="Order details", detailsOrder=detailsOrder)

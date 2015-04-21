@@ -41,12 +41,21 @@ def getListBooks(title = None, author = None, year = None):
     return list
 
 def addBook(title, author, year):
-    if(not(Book.query.filter_by(title=title).first() is None
-            and isinstance(year, (int, long)))):
+    if(Book.query.filter_by(title=title).first() is not None):
         return False
 
     b = Book(title, author, year)
     db.session.add(b)
+    db.session.commit()
+
+    return True
+
+def removeBook(title):
+    book = Book.query.filter_by(title=title).first()
+    if(book is None):
+        return False
+
+    db.session.delete(book)
     db.session.commit()
 
     return True

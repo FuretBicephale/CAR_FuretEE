@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, request
+from flask import render_template, flash, redirect, request, url_for, session
 from app import app
 from app.views import main_views
 from app.models import books
@@ -10,10 +10,13 @@ def addBook():
     Creates a form for the user to add a new book with its title, author and year of publication.
     If the form is validated, displays entered information to the user before validation.
     '''
+    if(not 'admin' in session or session['admin'] is False):
+        return redirect(url_for('index'))
+
     form = forms.BookForm()
 
     if form.validate_on_submit():
-        return render_template("addBook.html", form=form, added=True)
+        return render_template("addBook.html", title="Add book", form=form, added=True)
 
     return render_template("addBook.html",
                            title="Add book",
@@ -25,13 +28,18 @@ def validateBook():
     Validate the entered book and add it to the database
     '''
     print request.form['title']
+
+    try:
+        year = int(request.form['year'])
+    except ValueError:
+        flash("Invalid year.")
+        return redirect(url_for("index"))
+
     if(books.addBook(request.form['title'], request.form['author'], request.form['year'])):
         flash("Book successfully added to the database.")
-    elif(not(isinstance(request.form['year'], (long, int)))):
-        flash("Invalid year.")
     else:
         flash("Book already added to the database.")
-    return redirect("\index")
+    return redirect(url_for("index"))
 
 @app.route('/initBooks')
 def initBooks():
@@ -42,7 +50,7 @@ def initBooks():
         flash("Books successfully initialized.")
     else:
         flash("Books already initialized.")
-    return redirect("\index")
+    return redirect(url_for("index"))
 
 @app.route('/listAuthors')
 def listAuthors():
@@ -62,3 +70,15 @@ def listBooks():
     year = request.args.get("year") or request.form.get("year")
     list = books.getListBooks(title, author, year)
     return render_template("listBooks.html", title="Books", list=list)
+
+@app.route('/removeBook')
+def removeBook():
+    if(not 'admin' in session or session['admin'] is False):
+        return redirect(url_for('index'))
+
+    if(books.removeBook(request.args.get('bookTitle'))):
+        flash("Book successfully removed.")
+    else:
+        flash("Book not found.")
+
+    return redirect(url_for('listBooks'))

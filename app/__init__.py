@@ -9,4 +9,4 @@ app.config.from_object('config')
 db = SQLAlchemy(app)
 
 from app.views import main_views, book_views, order_views
-from app.models import books, orders
+from app.models import books, orders, users

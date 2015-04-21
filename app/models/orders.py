@@ -7,12 +7,13 @@ def addOrder(cart):
     db.session.commit()
 
     for book in cart:
-        orderBook = OrderBook(order.id, book)
-        db.session.add(orderBook)
+        if(OrderBook.query.filter_by(order_id=order.id, book_title=book).first() is None):
+            orderBook = OrderBook(order.id, book)
+            db.session.add(orderBook)
 
     db.session.commit()
 
-    return True
+    return order.id
 
 class OrderBook(db.Model):
     '''

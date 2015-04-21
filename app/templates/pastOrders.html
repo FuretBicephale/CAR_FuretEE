@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Past orders</h3>
+  </div>
+  {% if userOrders|length == 0 %}
+    <div class="panel-body">
+      <p>You don't have any past order</p>
+    </div>
+  {% else %}
+    <table class="table table-hover">
+      <th style="width:99%">Order Id</th>
+      <th style="white-space:nowrap">See details</th>
+      {% for userOrder in userOrders %}
+        <tr>
+          <td style="width:99%">{{ userOrder.order_id }}</td>
+          <td style="white-space:nowrap">
+            <a href="{{ url_for('detailsOrder') }}?order={{ userOrder.order_id }}"><span class="glyphicon glyphicon-book" aria-hidden="true"></span></a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+</div
+{% endblock %}

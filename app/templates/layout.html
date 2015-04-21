@@ -52,17 +52,35 @@
                     <a href="{{ url_for('listAuthors') }}">Authors
                       {% if active_section == 'authors' %} <span class="sr-only">(current)</span> {% endif %}
                     </a></li>
+                  {% if session['admin'] %}
+                  <li {% if active_section == 'addBook' %} class="active" {% endif %}>
+                    <a href="{{ url_for('addBook') }}">Add book
+                      {% if active_section == 'addBook' %} <span class="sr-only">(current)</span> {% endif %}
+                    </a></li>
+                  {% endif %}
                 </ul>
-                <span class="nav navbar-nav navbar-right">
-                  <a href="#">
-                    <button type="button" class="btn btn-default navbar-btn">Register</button>
-                  </a>
-                  <a href="#">
-                    <button type="button" class="btn btn-default navbar-btn">Login</button>
-                  </a>
+                  <span class="nav navbar-nav navbar-right">
                   <a href="{{ url_for('seeCart') }}">
+                  {% if session['user'] is not none and session['user'] != '' %}
+                  <p class="navbar-text">Signed in as {{ session['user'] }}</p>
+                  {% endif %}
                     <button type="button" class="btn btn-default navbar-btn">Cart</button>
                   </a>
+                  {% if session['user'] is not none and session['user'] != '' %}
+                    <a href="{{ url_for('pastOrders') }}">
+                      <button type="button" class="btn btn-default navbar-btn">Past orders</button>
+                    </a>
+                    <a href="{{ url_for('logout') }}">
+                      <button type="button" class="btn btn-default navbar-btn">Logout</button>
+                    </a>
+                  {% else %}
+                    <a href="{{ url_for('register') }}">
+                      <button type="button" class="btn btn-default navbar-btn">Register</button>
+                    </a>
+                    <a href="{{ url_for('login') }}">
+                      <button type="button" class="btn btn-default navbar-btn">Login</button>
+                    </a>
+                  {% endif %}
                 </ul>
               </div>
             </div>

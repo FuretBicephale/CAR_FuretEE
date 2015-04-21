@@ -33,6 +33,9 @@
       <th>Author</th>
       <th>Publication year</th>
       <th>Add to cart</th>
+      {% if session['admin'] %}
+      <th>Remove book</th>
+      {% endif %}
       {% for book in list %}
         <tr>
           <td>{{ book.title }}</td>
@@ -41,6 +44,11 @@
           <td>
             <a href="{{ url_for('addBookToCart') }}?bookTitle={{ book.title }}"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
           </td>
+          {% if session['admin'] %}
+          <td>
+            <a href="{{ url_for('removeBook') }}?bookTitle={{ book.title }}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+          </td>
+          {% endif %}
         </tr>
       {% endfor %}
     </table>
