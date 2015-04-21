@@ -16,7 +16,7 @@ def addBookToCart():
 def removeBookFromCart():
     if(not "cart" in session
             or not request.args.get("bookTitle") in session["cart"]):
-        flash("Something gone wrong.")
+        flash("Something went wrong.")
         return redirect(url_for("seeCart"))
 
     session["cart"].remove(request.args.get("bookTitle"))
@@ -38,5 +38,5 @@ def validateCart():
         flash("Order successfully validated.")
         session["cart"] = []
     else:
-        flash("Something gone wrong.")
+        flash("Something went wrong.")
     return redirect("index")

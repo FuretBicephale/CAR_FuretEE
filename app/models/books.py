@@ -30,9 +30,6 @@ def getListAuthors():
 def getListBooks(title = None, author = None, year = None):
     list = []
     books = Book.query
-    print title
-    print author
-    print year
     if(title != None and title != ""):
         books = books.filter(Book.title.contains(title))
     if(author != None and author != ""):
@@ -44,7 +41,8 @@ def getListBooks(title = None, author = None, year = None):
     return list
 
 def addBook(title, author, year):
-    if(not(Book.query.filter_by(title=title).first() is None)):
+    if(not(Book.query.filter_by(title=title).first() is None
+            and isinstance(year, (int, long)))):
         return False
 
     b = Book(title, author, year)

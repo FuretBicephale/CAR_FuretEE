@@ -16,7 +16,7 @@ def addBook():
         return render_template("addBook.html", form=form, added=True)
 
     return render_template("addBook.html",
-                           title="Add a new book",
+                           title="Add book",
                            form=form)
 
 @app.route('/addBook/validate', methods=['GET', 'POST'])
@@ -27,6 +27,8 @@ def validateBook():
     print request.form['title']
     if(books.addBook(request.form['title'], request.form['author'], request.form['year'])):
         flash("Book successfully added to the database.")
+    elif(not(isinstance(request.form['year'], (long, int)))):
+        flash("Invalid year.")
     else:
         flash("Book already added to the database.")
     return redirect("\index")
@@ -48,7 +50,7 @@ def listAuthors():
     Returns a list of the registered books authors.
     '''
     list = books.getListAuthors()
-    return render_template("listAuthors.html", list=list)
+    return render_template("listAuthors.html", title="Authors", list=list)
 
 @app.route('/listBooks', methods=['GET', 'POST'])
 def listBooks():
@@ -59,4 +61,4 @@ def listBooks():
     author = request.args.get("author") or request.form.get("author")
     year = request.args.get("year") or request.form.get("year")
     list = books.getListBooks(title, author, year)
-    return render_template("listBooks.html", list=list)
+    return render_template("listBooks.html", title="Books", list=list)

@@ -1,8 +1,9 @@
+{% set active_section = 'authors' %}
 {% extends "layout.html" %}
 {% block content %}
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Authors list</h3>
+    <h3 class="panel-title">Authors</h3>
   </div>
   {% if list|length == 0 %}
     <div class="panel-body">
