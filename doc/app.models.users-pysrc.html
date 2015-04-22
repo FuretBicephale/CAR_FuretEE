@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>app.models.users</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="app-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="app-module.html">Package&nbsp;app</a> ::
+        <a href="app.models-module.html">Package&nbsp;models</a> ::
+        Module&nbsp;users
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="app.models.users-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="app.models.users-module.html">Module app.models.users</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package app=app-module.html,Variable app.app=app-module.html#app"><a title="app
+app.app" class="py-name" href="#" onclick="return doclink('link-0', 'app', 'link-0');">app</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Variable app.db=app-module.html#db"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-1', 'db', 'link-1');">db</a></tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-2" class="py-name"><a title="app
+app.app" class="py-name" href="#" onclick="return doclink('link-2', 'app', 'link-0');">app</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Package app.models=app.models-module.html"><a title="app.models" class="py-name" href="#" onclick="return doclink('link-3', 'models', 'link-3');">models</a></tt> <tt class="py-keyword">import</tt> <tt id="link-4" class="py-name" targets="Module app.models.orders=app.models.orders-module.html,Variable app.models.users.User.orders=app.models.users.User-class.html#orders"><a title="app.models.orders
+app.models.users.User.orders" class="py-name" href="#" onclick="return doclink('link-4', 'orders', 'link-4');">orders</a></tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
+<a name="initUsers"></a><div id="initUsers-def"><a name="L4"></a><tt class="py-lineno"> 4</tt> <a class="py-toggle" href="#" id="initUsers-toggle" onclick="return toggle('initUsers');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.users-module.html#initUsers">initUsers</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="initUsers-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="initUsers-expanded"><a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">    Initializes the database with some users and return True if it's done, False if it was already done.</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring">    @return True if users are successfully initialized, false otherwise.</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-keyword">not</tt><tt class="py-op">(</tt><tt id="link-5" class="py-name" targets="Class app.models.users.User=app.models.users.User-class.html"><a title="app.models.users.User" class="py-name" href="#" onclick="return doclink('link-5', 'User', 'link-5');">User</a></tt><tt class="py-op">.</tt><tt class="py-name">query</tt><tt class="py-op">.</tt><tt class="py-name">filter_by</tt><tt class="py-op">(</tt><tt id="link-6" class="py-name" targets="Variable app.models.users.User.pseudo=app.models.users.User-class.html#pseudo"><a title="app.models.users.User.pseudo" class="py-name" href="#" onclick="return doclink('link-6', 'pseudo', 'link-6');">pseudo</a></tt><tt class="py-op">=</tt><tt class="py-string">"ferret"</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">first</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">False</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">    <tt id="link-7" class="py-name" targets="Function app.models.users.addUser()=app.models.users-module.html#addUser"><a title="app.models.users.addUser" class="py-name" href="#" onclick="return doclink('link-7', 'addUser', 'link-7');">addUser</a></tt><tt class="py-op">(</tt><tt class="py-string">"admin"</tt><tt class="py-op">,</tt> <tt class="py-string">"admin"</tt><tt class="py-op">,</tt> <tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+</div><a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"> </tt>
+<a name="addUser"></a><div id="addUser-def"><a name="L16"></a><tt class="py-lineno">16</tt> <a class="py-toggle" href="#" id="addUser-toggle" onclick="return toggle('addUser');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.users-module.html#addUser">addUser</a><tt class="py-op">(</tt><tt class="py-param">pseudo</tt><tt class="py-op">,</tt> <tt class="py-param">password</tt><tt class="py-op">,</tt> <tt class="py-param">admin</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="addUser-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="addUser-expanded"><a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-docstring">    Add a user to the database with its pseudo, password and admin status and return True if it's done.</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">    @type pseudo: string</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-docstring">    @type password: string</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-docstring">    @type admin: boolean</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-docstring">    @param admin: True if the user is an admin of the website, false otherwise</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-docstring">    @return True if the user is added, False otherwise</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-keyword">not</tt><tt class="py-op">(</tt><tt id="link-8" class="py-name"><a title="app.models.users.User" class="py-name" href="#" onclick="return doclink('link-8', 'User', 'link-5');">User</a></tt><tt class="py-op">.</tt><tt class="py-name">query</tt><tt class="py-op">.</tt><tt class="py-name">filter_by</tt><tt class="py-op">(</tt><tt id="link-9" class="py-name"><a title="app.models.users.User.pseudo" class="py-name" href="#" onclick="return doclink('link-9', 'pseudo', 'link-6');">pseudo</a></tt><tt class="py-op">=</tt><tt id="link-10" class="py-name"><a title="app.models.users.User.pseudo" class="py-name" href="#" onclick="return doclink('link-10', 'pseudo', 'link-6');">pseudo</a></tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">first</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">False</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">    <tt class="py-name">u</tt> <tt class="py-op">=</tt> <tt id="link-11" class="py-name"><a title="app.models.users.User" class="py-name" href="#" onclick="return doclink('link-11', 'User', 'link-5');">User</a></tt><tt class="py-op">(</tt><tt id="link-12" class="py-name"><a title="app.models.users.User.pseudo" class="py-name" href="#" onclick="return doclink('link-12', 'pseudo', 'link-6');">pseudo</a></tt><tt class="py-op">,</tt> <tt id="link-13" class="py-name" targets="Variable app.models.users.User.password=app.models.users.User-class.html#password"><a title="app.models.users.User.password" class="py-name" href="#" onclick="return doclink('link-13', 'password', 'link-13');">password</a></tt><tt class="py-op">,</tt> <tt id="link-14" class="py-name" targets="Variable app.models.users.User.admin=app.models.users.User-class.html#admin"><a title="app.models.users.User.admin" class="py-name" href="#" onclick="return doclink('link-14', 'admin', 'link-14');">admin</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">    <tt id="link-15" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-15', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">session</tt><tt class="py-op">.</tt><tt class="py-name">add</tt><tt class="py-op">(</tt><tt class="py-name">u</tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt id="link-16" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-16', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">session</tt><tt class="py-op">.</tt><tt class="py-name">commit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+</div><a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"> </tt>
+<a name="UserOrder"></a><div id="UserOrder-def"><a name="L34"></a><tt class="py-lineno">34</tt> <a class="py-toggle" href="#" id="UserOrder-toggle" onclick="return toggle('UserOrder');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="app.models.users.UserOrder-class.html">UserOrder</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="UserOrder-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="UserOrder-expanded"><a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-docstring">    Represents the association between a user and an order with the user pseudo and the order id</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-docstring">    @author cachera - brabant</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">    <tt id="link-17" class="py-name" targets="Variable app.models.books.Book.__tablename__=app.models.books.Book-class.html#__tablename__,Variable app.models.orders.Order.__tablename__=app.models.orders.Order-class.html#__tablename__,Variable app.models.orders.OrderBook.__tablename__=app.models.orders.OrderBook-class.html#__tablename__,Variable app.models.users.User.__tablename__=app.models.users.User-class.html#__tablename__,Variable app.models.users.UserOrder.__tablename__=app.models.users.UserOrder-class.html#__tablename__"><a title="app.models.books.Book.__tablename__
+app.models.orders.Order.__tablename__
+app.models.orders.OrderBook.__tablename__
+app.models.users.User.__tablename__
+app.models.users.UserOrder.__tablename__" class="py-name" href="#" onclick="return doclink('link-17', '__tablename__', 'link-17');">__tablename__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"user_order"</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">    <tt id="link-18" class="py-name" targets="Variable app.models.users.UserOrder.user_pseudo=app.models.users.UserOrder-class.html#user_pseudo"><a title="app.models.users.UserOrder.user_pseudo" class="py-name" href="#" onclick="return doclink('link-18', 'user_pseudo', 'link-18');">user_pseudo</a></tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-19', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-20" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-20', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">,</tt> <tt id="link-21" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-21', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">"user.pseudo"</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">    <tt id="link-22" class="py-name" targets="Variable app.models.orders.OrderBook.order_id=app.models.orders.OrderBook-class.html#order_id,Variable app.models.users.UserOrder.order_id=app.models.users.UserOrder-class.html#order_id"><a title="app.models.orders.OrderBook.order_id
+app.models.users.UserOrder.order_id" class="py-name" href="#" onclick="return doclink('link-22', 'order_id', 'link-22');">order_id</a></tt> <tt class="py-op">=</tt> <tt id="link-23" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-23', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-24" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-24', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt id="link-25" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-25', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">"order.id"</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"> </tt>
+<a name="UserOrder.__init__"></a><div id="UserOrder.__init__-def"><a name="L43"></a><tt class="py-lineno">43</tt> <a class="py-toggle" href="#" id="UserOrder.__init__-toggle" onclick="return toggle('UserOrder.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.users.UserOrder-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">user_pseudo</tt><tt class="py-op">,</tt> <tt class="py-param">order_id</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="UserOrder.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="UserOrder.__init__-expanded"><a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="app.models.users.UserOrder.user_pseudo" class="py-name" href="#" onclick="return doclink('link-26', 'user_pseudo', 'link-18');">user_pseudo</a></tt> <tt class="py-op">=</tt> <tt id="link-27" class="py-name"><a title="app.models.users.UserOrder.user_pseudo" class="py-name" href="#" onclick="return doclink('link-27', 'user_pseudo', 'link-18');">user_pseudo</a></tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="app.models.orders.OrderBook.order_id
+app.models.users.UserOrder.order_id" class="py-name" href="#" onclick="return doclink('link-28', 'order_id', 'link-22');">order_id</a></tt> <tt class="py-op">=</tt> <tt id="link-29" class="py-name"><a title="app.models.orders.OrderBook.order_id
+app.models.users.UserOrder.order_id" class="py-name" href="#" onclick="return doclink('link-29', 'order_id', 'link-22');">order_id</a></tt> </tt>
+</div></div><a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"> </tt>
+<a name="User"></a><div id="User-def"><a name="L47"></a><tt class="py-lineno">47</tt> <a class="py-toggle" href="#" id="User-toggle" onclick="return toggle('User');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="app.models.users.User-class.html">User</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="User-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="User-expanded"><a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"><tt class="py-docstring">    Represents a registered user in the database with its pseudo, as primary key, pass and orders and its admin status</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line"><tt class="py-docstring">    @author cachera - brabant</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">    <tt id="link-30" class="py-name"><a title="app.models.books.Book.__tablename__
+app.models.orders.Order.__tablename__
+app.models.orders.OrderBook.__tablename__
+app.models.users.User.__tablename__
+app.models.users.UserOrder.__tablename__" class="py-name" href="#" onclick="return doclink('link-30', '__tablename__', 'link-17');">__tablename__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"user"</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">    <tt id="link-31" class="py-name"><a title="app.models.users.User.pseudo" class="py-name" href="#" onclick="return doclink('link-31', 'pseudo', 'link-6');">pseudo</a></tt> <tt class="py-op">=</tt> <tt id="link-32" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-32', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-33" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-33', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">64</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">    <tt id="link-34" class="py-name"><a title="app.models.users.User.password" class="py-name" href="#" onclick="return doclink('link-34', 'password', 'link-13');">password</a></tt> <tt class="py-op">=</tt> <tt id="link-35" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-35', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-36" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-36', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">64</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">    <tt id="link-37" class="py-name"><a title="app.models.users.User.admin" class="py-name" href="#" onclick="return doclink('link-37', 'admin', 'link-14');">admin</a></tt> <tt class="py-op">=</tt> <tt id="link-38" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-38', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-39" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-39', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Boolean</tt><tt class="py-op">,</tt> <tt class="py-name">default</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">    <tt id="link-40" class="py-name"><a title="app.models.orders
+app.models.users.User.orders" class="py-name" href="#" onclick="return doclink('link-40', 'orders', 'link-4');">orders</a></tt> <tt class="py-op">=</tt> <tt id="link-41" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-41', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">"UserOrder"</tt><tt class="py-op">,</tt> <tt class="py-name">backref</tt><tt class="py-op">=</tt><tt class="py-string">"user"</tt><tt class="py-op">,</tt> <tt class="py-name">lazy</tt><tt class="py-op">=</tt><tt class="py-string">"dynamic"</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"> </tt>
+<a name="User.__init__"></a><div id="User.__init__-def"><a name="L58"></a><tt class="py-lineno">58</tt> <a class="py-toggle" href="#" id="User.__init__-toggle" onclick="return toggle('User.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.users.User-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">pseudo</tt><tt class="py-op">,</tt> <tt class="py-param">password</tt><tt class="py-op">,</tt> <tt class="py-param">admin</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="User.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="User.__init__-expanded"><a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name"><a title="app.models.users.User.pseudo" class="py-name" href="#" onclick="return doclink('link-42', 'pseudo', 'link-6');">pseudo</a></tt> <tt class="py-op">=</tt> <tt id="link-43" class="py-name"><a title="app.models.users.User.pseudo" class="py-name" href="#" onclick="return doclink('link-43', 'pseudo', 'link-6');">pseudo</a></tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="app.models.users.User.password" class="py-name" href="#" onclick="return doclink('link-44', 'password', 'link-13');">password</a></tt> <tt class="py-op">=</tt> <tt id="link-45" class="py-name"><a title="app.models.users.User.password" class="py-name" href="#" onclick="return doclink('link-45', 'password', 'link-13');">password</a></tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="app.models.users.User.admin" class="py-name" href="#" onclick="return doclink('link-46', 'admin', 'link-14');">admin</a></tt> <tt class="py-op">=</tt> <tt id="link-47" class="py-name"><a title="app.models.users.User.admin" class="py-name" href="#" onclick="return doclink('link-47', 'admin', 'link-14');">admin</a></tt> </tt>
+</div><a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line"> </tt>
+<a name="User.authenticate"></a><div id="User.authenticate-def"><a name="L63"></a><tt class="py-lineno">63</tt> <a class="py-toggle" href="#" id="User.authenticate-toggle" onclick="return toggle('User.authenticate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.users.User-class.html#authenticate">authenticate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">password</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="User.authenticate-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="User.authenticate-expanded"><a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">        <tt class="py-docstring">'''</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line"><tt class="py-docstring">        Authenticate the user if the password match with its password</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"><tt class="py-docstring">        @type password: string</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line"><tt class="py-docstring">        @return True if the user is logged, false otherwise</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="app.models.users.User.password" class="py-name" href="#" onclick="return doclink('link-48', 'password', 'link-13');">password</a></tt> <tt class="py-op">==</tt> <tt id="link-49" class="py-name"><a title="app.models.users.User.password" class="py-name" href="#" onclick="return doclink('link-49', 'password', 'link-13');">password</a></tt> </tt>
+</div><a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line"> </tt>
+<a name="User.isAdmin"></a><div id="User.isAdmin-def"><a name="L71"></a><tt class="py-lineno">71</tt> <a class="py-toggle" href="#" id="User.isAdmin-toggle" onclick="return toggle('User.isAdmin');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.users.User-class.html#isAdmin">isAdmin</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="User.isAdmin-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="User.isAdmin-expanded"><a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name"><a title="app.models.users.User.admin" class="py-name" href="#" onclick="return doclink('link-50', 'admin', 'link-14');">admin</a></tt> </tt>
+</div><a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line"> </tt>
+<a name="User.addOrder"></a><div id="User.addOrder-def"><a name="L74"></a><tt class="py-lineno">74</tt> <a class="py-toggle" href="#" id="User.addOrder-toggle" onclick="return toggle('User.addOrder');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.users.User-class.html#addOrder">addOrder</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">orderId</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="User.addOrder-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="User.addOrder-expanded"><a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line">        <tt class="py-docstring">'''</tt> </tt>
+<a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line"><tt class="py-docstring">        Links an order to this user</tt> </tt>
+<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line"><tt class="py-docstring">        @type orderId: number</tt> </tt>
+<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line"><tt class="py-docstring">        @param orderId: the order to link to the user</tt> </tt>
+<a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line">        <tt class="py-name">userOrder</tt> <tt class="py-op">=</tt> <tt id="link-51" class="py-name" targets="Class app.models.users.UserOrder=app.models.users.UserOrder-class.html"><a title="app.models.users.UserOrder" class="py-name" href="#" onclick="return doclink('link-51', 'UserOrder', 'link-51');">UserOrder</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-52" class="py-name"><a title="app.models.users.User.pseudo" class="py-name" href="#" onclick="return doclink('link-52', 'pseudo', 'link-6');">pseudo</a></tt><tt class="py-op">,</tt> <tt class="py-name">orderId</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno">81</tt>  <tt class="py-line">        <tt id="link-53" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-53', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">session</tt><tt class="py-op">.</tt><tt class="py-name">add</tt><tt class="py-op">(</tt><tt class="py-name">userOrder</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno">82</tt>  <tt class="py-line">        <tt id="link-54" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-54', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">session</tt><tt class="py-op">.</tt><tt class="py-name">commit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L83"></a><tt class="py-lineno">83</tt>  <tt class="py-line"> </tt>
+<a name="User.__repr__"></a><div id="User.__repr__-def"><a name="L84"></a><tt class="py-lineno">84</tt> <a class="py-toggle" href="#" id="User.__repr__-toggle" onclick="return toggle('User.__repr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.users.User-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="User.__repr__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="User.__repr__-expanded"><a name="L85"></a><tt class="py-lineno">85</tt>  <tt class="py-line">        <tt class="py-docstring">'''</tt> </tt>
+<a name="L86"></a><tt class="py-lineno">86</tt>  <tt class="py-line"><tt class="py-docstring">        Represents the order as a string</tt> </tt>
+<a name="L87"></a><tt class="py-lineno">87</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L88"></a><tt class="py-lineno">88</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">"{}"</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-55" class="py-name"><a title="app.models.users.User.pseudo" class="py-name" href="#" onclick="return doclink('link-55', 'pseudo', 'link-6');">pseudo</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L89"></a><tt class="py-lineno">89</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="app-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Apr 22 11:41:09 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

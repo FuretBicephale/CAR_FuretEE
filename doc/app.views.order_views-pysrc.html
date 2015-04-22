@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>app.views.order_views</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="app-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="app-module.html">Package&nbsp;app</a> ::
+        <a href="app.views-module.html">Package&nbsp;views</a> ::
+        Module&nbsp;order_views
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="app.views.order_views-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="app.views.order_views-module.html">Module app.views.order_views</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">flask</tt> <tt class="py-keyword">import</tt> <tt class="py-name">render_template</tt><tt class="py-op">,</tt> <tt class="py-name">redirect</tt><tt class="py-op">,</tt> <tt class="py-name">session</tt><tt class="py-op">,</tt> <tt class="py-name">request</tt><tt class="py-op">,</tt> <tt class="py-name">url_for</tt><tt class="py-op">,</tt> <tt class="py-name">flash</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package app=app-module.html,Variable app.app=app-module.html#app"><a title="app
+app.app" class="py-name" href="#" onclick="return doclink('link-0', 'app', 'link-0');">app</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name"><a title="app
+app.app" class="py-name" href="#" onclick="return doclink('link-1', 'app', 'link-0');">app</a></tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-2" class="py-name"><a title="app
+app.app" class="py-name" href="#" onclick="return doclink('link-2', 'app', 'link-0');">app</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Package app.views=app.views-module.html"><a title="app.views" class="py-name" href="#" onclick="return doclink('link-3', 'views', 'link-3');">views</a></tt> <tt class="py-keyword">import</tt> <tt id="link-4" class="py-name" targets="Module app.views.main_views=app.views.main_views-module.html"><a title="app.views.main_views" class="py-name" href="#" onclick="return doclink('link-4', 'main_views', 'link-4');">main_views</a></tt><tt class="py-op">,</tt> <tt id="link-5" class="py-name" targets="Module app.views.book_views=app.views.book_views-module.html"><a title="app.views.book_views" class="py-name" href="#" onclick="return doclink('link-5', 'book_views', 'link-5');">book_views</a></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-6" class="py-name"><a title="app
+app.app" class="py-name" href="#" onclick="return doclink('link-6', 'app', 'link-0');">app</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Package app.models=app.models-module.html"><a title="app.models" class="py-name" href="#" onclick="return doclink('link-7', 'models', 'link-7');">models</a></tt> <tt class="py-keyword">import</tt> <tt id="link-8" class="py-name" targets="Module app.models.orders=app.models.orders-module.html,Variable app.models.users.User.orders=app.models.users.User-class.html#orders"><a title="app.models.orders
+app.models.users.User.orders" class="py-name" href="#" onclick="return doclink('link-8', 'orders', 'link-8');">orders</a></tt><tt class="py-op">,</tt> <tt id="link-9" class="py-name" targets="Module app.models.users=app.models.users-module.html"><a title="app.models.users" class="py-name" href="#" onclick="return doclink('link-9', 'users', 'link-9');">users</a></tt><tt class="py-op">,</tt> <tt id="link-10" class="py-name" targets="Module app.models.books=app.models.books-module.html,Variable app.models.orders.Order.books=app.models.orders.Order-class.html#books"><a title="app.models.books
+app.models.orders.Order.books" class="py-name" href="#" onclick="return doclink('link-10', 'books', 'link-10');">books</a></tt> </tt>
+<a name="addBookToCart"></a><div id="addBookToCart-def"><a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">app</tt><tt class="py-op">.</tt><tt class="py-name">route</tt><tt class="py-op">(</tt><tt class="py-string">'/listBooks/addBookToCart'</tt><tt class="py-op">)</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt> <a class="py-toggle" href="#" id="addBookToCart-toggle" onclick="return toggle('addBookToCart');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="app.views.order_views-module.html#addBookToCart">addBookToCart</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="addBookToCart-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="addBookToCart-expanded"><a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-docstring">    Adds a book to the cart of the user and creates the cart if it doesn't exist.</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-keyword">not</tt> <tt class="py-string">"cart"</tt> <tt class="py-keyword">in</tt> <tt class="py-name">session</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">        <tt class="py-name">session</tt><tt class="py-op">[</tt><tt class="py-string">"cart"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">    <tt class="py-name">session</tt><tt class="py-op">[</tt><tt class="py-string">"cart"</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">"bookTitle"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">    <tt class="py-name">flash</tt><tt class="py-op">(</tt><tt class="py-string">"{} added to your cart."</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">"bookTitle"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">redirect</tt><tt class="py-op">(</tt><tt class="py-name">url_for</tt><tt class="py-op">(</tt><tt class="py-string">"listBooks"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"> </tt>
+<a name="removeBookFromCart"></a><div id="removeBookFromCart-def"><a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">app</tt><tt class="py-op">.</tt><tt class="py-name">route</tt><tt class="py-op">(</tt><tt class="py-string">'/seeCart/removeBookFromCart'</tt><tt class="py-op">)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt> <a class="py-toggle" href="#" id="removeBookFromCart-toggle" onclick="return toggle('removeBookFromCart');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="app.views.order_views-module.html#removeBookFromCart">removeBookFromCart</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="removeBookFromCart-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="removeBookFromCart-expanded"><a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-keyword">not</tt> <tt class="py-string">"cart"</tt> <tt class="py-keyword">in</tt> <tt class="py-name">session</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">            <tt class="py-keyword">or</tt> <tt class="py-keyword">not</tt> <tt class="py-name">request</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">"bookTitle"</tt><tt class="py-op">)</tt> <tt class="py-keyword">in</tt> <tt class="py-name">session</tt><tt class="py-op">[</tt><tt class="py-string">"cart"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">        <tt class="py-name">flash</tt><tt class="py-op">(</tt><tt class="py-string">"Something went wrong."</tt><tt class="py-op">)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">redirect</tt><tt class="py-op">(</tt><tt class="py-name">url_for</tt><tt class="py-op">(</tt><tt class="py-string">"seeCart"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">    <tt class="py-name">session</tt><tt class="py-op">[</tt><tt class="py-string">"cart"</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">remove</tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">"bookTitle"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">    <tt class="py-name">flash</tt><tt class="py-op">(</tt><tt class="py-string">"{} removed from your cart."</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">"bookTitle"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">redirect</tt><tt class="py-op">(</tt><tt class="py-name">url_for</tt><tt class="py-op">(</tt><tt class="py-string">"seeCart"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"> </tt>
+<a name="seeCart"></a><div id="seeCart-def"><a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">app</tt><tt class="py-op">.</tt><tt class="py-name">route</tt><tt class="py-op">(</tt><tt class="py-string">'/seeCart'</tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt> <a class="py-toggle" href="#" id="seeCart-toggle" onclick="return toggle('seeCart');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="app.views.order_views-module.html#seeCart">seeCart</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="seeCart-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="seeCart-expanded"><a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-keyword">not</tt> <tt class="py-string">"cart"</tt> <tt class="py-keyword">in</tt> <tt class="py-name">session</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">        <tt class="py-name">session</tt><tt class="py-op">[</tt><tt class="py-string">"cart"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">render_template</tt><tt class="py-op">(</tt><tt class="py-string">"seeCart.html"</tt><tt class="py-op">,</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">                           <tt id="link-11" class="py-name" targets="Variable app.models.books.Book.title=app.models.books.Book-class.html#title"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-11', 'title', 'link-11');">title</a></tt><tt class="py-op">=</tt><tt class="py-string">"Your cart"</tt><tt class="py-op">,</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">                           <tt class="py-name">cart</tt><tt class="py-op">=</tt><tt class="py-name">session</tt><tt class="py-op">[</tt><tt class="py-string">"cart"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"> </tt>
+<a name="validateCart"></a><div id="validateCart-def"><a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">app</tt><tt class="py-op">.</tt><tt class="py-name">route</tt><tt class="py-op">(</tt><tt class="py-string">'/seeCart/validateCart'</tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt> <a class="py-toggle" href="#" id="validateCart-toggle" onclick="return toggle('validateCart');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="app.views.order_views-module.html#validateCart">validateCart</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="validateCart-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="validateCart-expanded"><a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"><tt class="py-docstring">    Validate the cart of the user and create an order, if the user is logged in, link the order to his account.</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">    <tt class="py-name">orderId</tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name"><a title="app.models.orders
+app.models.users.User.orders" class="py-name" href="#" onclick="return doclink('link-12', 'orders', 'link-8');">orders</a></tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Function app.models.orders.addOrder()=app.models.orders-module.html#addOrder,Method app.models.users.User.addOrder()=app.models.users.User-class.html#addOrder"><a title="app.models.orders.addOrder
+app.models.users.User.addOrder" class="py-name" href="#" onclick="return doclink('link-13', 'addOrder', 'link-13');">addOrder</a></tt><tt class="py-op">(</tt><tt class="py-name">session</tt><tt class="py-op">[</tt><tt class="py-string">"cart"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">orderId</tt> <tt class="py-op">!=</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-string">"user"</tt> <tt class="py-keyword">in</tt> <tt class="py-name">session</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">            <tt id="link-14" class="py-name"><a title="app.models.users" class="py-name" href="#" onclick="return doclink('link-14', 'users', 'link-9');">users</a></tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Class app.models.users.User=app.models.users.User-class.html"><a title="app.models.users.User" class="py-name" href="#" onclick="return doclink('link-15', 'User', 'link-15');">User</a></tt><tt class="py-op">.</tt><tt class="py-name">query</tt><tt class="py-op">.</tt><tt class="py-name">filter_by</tt><tt class="py-op">(</tt><tt id="link-16" class="py-name" targets="Variable app.models.users.User.pseudo=app.models.users.User-class.html#pseudo"><a title="app.models.users.User.pseudo" class="py-name" href="#" onclick="return doclink('link-16', 'pseudo', 'link-16');">pseudo</a></tt><tt class="py-op">=</tt><tt class="py-name">session</tt><tt class="py-op">[</tt><tt class="py-string">"user"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">first</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="app.models.orders.addOrder
+app.models.users.User.addOrder" class="py-name" href="#" onclick="return doclink('link-17', 'addOrder', 'link-13');">addOrder</a></tt><tt class="py-op">(</tt><tt class="py-name">orderId</tt><tt class="py-op">)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">        <tt class="py-name">flash</tt><tt class="py-op">(</tt><tt class="py-string">"Order successfully validated."</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">        <tt class="py-name">session</tt><tt class="py-op">[</tt><tt class="py-string">"cart"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">        <tt class="py-name">flash</tt><tt class="py-op">(</tt><tt class="py-string">"Something went wrong."</tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">redirect</tt><tt class="py-op">(</tt><tt class="py-name">url_for</tt><tt class="py-op">(</tt><tt class="py-string">"index"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"> </tt>
+<a name="pastOrders"></a><div id="pastOrders-def"><a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">app</tt><tt class="py-op">.</tt><tt class="py-name">route</tt><tt class="py-op">(</tt><tt class="py-string">'/pastOrders'</tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt> <a class="py-toggle" href="#" id="pastOrders-toggle" onclick="return toggle('pastOrders');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="app.views.order_views-module.html#pastOrders">pastOrders</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="pastOrders-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="pastOrders-expanded"><a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"><tt class="py-docstring">    List every past orders of a logged user.</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-string">"user"</tt> <tt class="py-keyword">not</tt> <tt class="py-keyword">in</tt> <tt class="py-name">session</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">redirect</tt><tt class="py-op">(</tt><tt class="py-name">url_for</tt><tt class="py-op">(</tt><tt class="py-string">"index"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line"> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">    <tt class="py-name">userOrders</tt> <tt class="py-op">=</tt> <tt id="link-18" class="py-name"><a title="app.models.users" class="py-name" href="#" onclick="return doclink('link-18', 'users', 'link-9');">users</a></tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="app.models.users.User" class="py-name" href="#" onclick="return doclink('link-19', 'User', 'link-15');">User</a></tt><tt class="py-op">.</tt><tt class="py-name">query</tt><tt class="py-op">.</tt><tt class="py-name">filter_by</tt><tt class="py-op">(</tt><tt id="link-20" class="py-name"><a title="app.models.users.User.pseudo" class="py-name" href="#" onclick="return doclink('link-20', 'pseudo', 'link-16');">pseudo</a></tt><tt class="py-op">=</tt><tt class="py-name">session</tt><tt class="py-op">[</tt><tt class="py-string">"user"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">first</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="app.models.orders
+app.models.users.User.orders" class="py-name" href="#" onclick="return doclink('link-21', 'orders', 'link-8');">orders</a></tt><tt class="py-op">.</tt><tt class="py-name">all</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line"> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">render_template</tt><tt class="py-op">(</tt><tt class="py-string">"pastOrders.html"</tt><tt class="py-op">,</tt> <tt id="link-22" class="py-name"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-22', 'title', 'link-11');">title</a></tt><tt class="py-op">=</tt><tt class="py-string">"Past orders"</tt><tt class="py-op">,</tt> <tt class="py-name">userOrders</tt><tt class="py-op">=</tt><tt class="py-name">userOrders</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line"> </tt>
+<a name="detailsOrder"></a><div id="detailsOrder-def"><a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">app</tt><tt class="py-op">.</tt><tt class="py-name">route</tt><tt class="py-op">(</tt><tt class="py-string">'/pastOrders/details'</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt> <a class="py-toggle" href="#" id="detailsOrder-toggle" onclick="return toggle('detailsOrder');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="app.views.order_views-module.html#detailsOrder">detailsOrder</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="detailsOrder-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="detailsOrder-expanded"><a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-string">"user"</tt> <tt class="py-keyword">not</tt> <tt class="py-keyword">in</tt> <tt class="py-name">session</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">redirect</tt><tt class="py-op">(</tt><tt class="py-name">url_for</tt><tt class="py-op">(</tt><tt class="py-string">"index"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line"> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line">    <tt class="py-name">orderBooks</tt> <tt class="py-op">=</tt> <tt id="link-23" class="py-name"><a title="app.models.orders
+app.models.users.User.orders" class="py-name" href="#" onclick="return doclink('link-23', 'orders', 'link-8');">orders</a></tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Class app.models.orders.Order=app.models.orders.Order-class.html"><a title="app.models.orders.Order" class="py-name" href="#" onclick="return doclink('link-24', 'Order', 'link-24');">Order</a></tt><tt class="py-op">.</tt><tt class="py-name">query</tt><tt class="py-op">.</tt><tt class="py-name">filter_by</tt><tt class="py-op">(</tt><tt id="link-25" class="py-name" targets="Variable app.models.orders.Order.id=app.models.orders.Order-class.html#id"><a title="app.models.orders.Order.id" class="py-name" href="#" onclick="return doclink('link-25', 'id', 'link-25');">id</a></tt><tt class="py-op">=</tt><tt class="py-name">request</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">"order"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">first</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="app.models.books
+app.models.orders.Order.books" class="py-name" href="#" onclick="return doclink('link-26', 'books', 'link-10');">books</a></tt><tt class="py-op">.</tt><tt class="py-name">all</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">    <tt id="link-27" class="py-name" targets="Function app.views.order_views.detailsOrder()=app.views.order_views-module.html#detailsOrder"><a title="app.views.order_views.detailsOrder" class="py-name" href="#" onclick="return doclink('link-27', 'detailsOrder', 'link-27');">detailsOrder</a></tt> <tt class="py-op">=</tt> <tt id="link-28" class="py-name"><a title="app.models.books
+app.models.orders.Order.books" class="py-name" href="#" onclick="return doclink('link-28', 'books', 'link-10');">books</a></tt><tt class="py-op">.</tt><tt id="link-29" class="py-name" targets="Class app.models.books.Book=app.models.books.Book-class.html"><a title="app.models.books.Book" class="py-name" href="#" onclick="return doclink('link-29', 'Book', 'link-29');">Book</a></tt><tt class="py-op">.</tt><tt class="py-name">query</tt><tt class="py-op">.</tt><tt class="py-name">filter</tt><tt class="py-op">(</tt><tt id="link-30" class="py-name"><a title="app.models.books
+app.models.orders.Order.books" class="py-name" href="#" onclick="return doclink('link-30', 'books', 'link-10');">books</a></tt><tt class="py-op">.</tt><tt id="link-31" class="py-name"><a title="app.models.books.Book" class="py-name" href="#" onclick="return doclink('link-31', 'Book', 'link-29');">Book</a></tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-32', 'title', 'link-11');">title</a></tt><tt class="py-op">.</tt><tt class="py-name">in_</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Variable app.models.orders.OrderBook.book_title=app.models.orders.OrderBook-class.html#book_title"><a title="app.models.orders.OrderBook.book_title" class="py-name" href="#" onclick="return doclink('link-33', 'book_title', 'link-33');">book_title</a></tt> <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">orderBooks</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">all</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line"> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">render_template</tt><tt class="py-op">(</tt><tt class="py-string">"detailsOrder.html"</tt><tt class="py-op">,</tt> <tt id="link-34" class="py-name"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-34', 'title', 'link-11');">title</a></tt><tt class="py-op">=</tt><tt class="py-string">"Order details"</tt><tt class="py-op">,</tt> <tt id="link-35" class="py-name"><a title="app.views.order_views.detailsOrder" class="py-name" href="#" onclick="return doclink('link-35', 'detailsOrder', 'link-27');">detailsOrder</a></tt><tt class="py-op">=</tt><tt id="link-36" class="py-name"><a title="app.views.order_views.detailsOrder" class="py-name" href="#" onclick="return doclink('link-36', 'detailsOrder', 'link-27');">detailsOrder</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="app-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Apr 22 11:41:09 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

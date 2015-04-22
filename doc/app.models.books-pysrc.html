@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>app.models.books</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="app-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="app-module.html">Package&nbsp;app</a> ::
+        <a href="app.models-module.html">Package&nbsp;models</a> ::
+        Module&nbsp;books
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="app.models.books-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="app.models.books-module.html">Module app.models.books</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package app=app-module.html,Variable app.app=app-module.html#app"><a title="app
+app.app" class="py-name" href="#" onclick="return doclink('link-0', 'app', 'link-0');">app</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Variable app.db=app-module.html#db"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-1', 'db', 'link-1');">db</a></tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="initBooks"></a><div id="initBooks-def"><a name="L3"></a><tt class="py-lineno">  3</tt> <a class="py-toggle" href="#" id="initBooks-toggle" onclick="return toggle('initBooks');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.books-module.html#initBooks">initBooks</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="initBooks-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="initBooks-expanded"><a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">    Initializes the database with some books and return True if it's done, False if it was already done.</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">    @return True if books are successfully initialized, false otherwise.</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-keyword">not</tt><tt class="py-op">(</tt><tt id="link-2" class="py-name" targets="Class app.models.books.Book=app.models.books.Book-class.html"><a title="app.models.books.Book" class="py-name" href="#" onclick="return doclink('link-2', 'Book', 'link-2');">Book</a></tt><tt class="py-op">.</tt><tt class="py-name">query</tt><tt class="py-op">.</tt><tt class="py-name">filter_by</tt><tt class="py-op">(</tt><tt id="link-3" class="py-name" targets="Variable app.models.books.Book.title=app.models.books.Book-class.html#title"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-3', 'title', 'link-3');">title</a></tt><tt class="py-op">=</tt><tt class="py-string">'Ferret Power'</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">first</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">False</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line">    <tt class="py-name">b1</tt> <tt class="py-op">=</tt> <tt id="link-4" class="py-name"><a title="app.models.books.Book" class="py-name" href="#" onclick="return doclink('link-4', 'Book', 'link-2');">Book</a></tt><tt class="py-op">(</tt><tt class="py-string">"Ferret Power"</tt><tt class="py-op">,</tt> <tt class="py-string">"Ferret Master"</tt><tt class="py-op">,</tt> <tt class="py-number">2016</tt><tt class="py-op">)</tt><tt class="py-op">;</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line">    <tt class="py-name">b2</tt> <tt class="py-op">=</tt> <tt id="link-5" class="py-name"><a title="app.models.books.Book" class="py-name" href="#" onclick="return doclink('link-5', 'Book', 'link-2');">Book</a></tt><tt class="py-op">(</tt><tt class="py-string">"Ferret Kingdom"</tt><tt class="py-op">,</tt> <tt class="py-string">"Ferret Master"</tt><tt class="py-op">,</tt> <tt class="py-number">2012</tt><tt class="py-op">)</tt><tt class="py-op">;</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">    <tt class="py-name">b3</tt> <tt class="py-op">=</tt> <tt id="link-6" class="py-name"><a title="app.models.books.Book" class="py-name" href="#" onclick="return doclink('link-6', 'Book', 'link-2');">Book</a></tt><tt class="py-op">(</tt><tt class="py-string">"The Stand"</tt><tt class="py-op">,</tt> <tt class="py-string">"Stephen King"</tt><tt class="py-op">,</tt> <tt class="py-number">1990</tt><tt class="py-op">)</tt><tt class="py-op">;</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">    <tt id="link-7" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-7', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">session</tt><tt class="py-op">.</tt><tt class="py-name">add</tt><tt class="py-op">(</tt><tt class="py-name">b1</tt><tt class="py-op">)</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">    <tt id="link-8" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-8', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">session</tt><tt class="py-op">.</tt><tt class="py-name">add</tt><tt class="py-op">(</tt><tt class="py-name">b2</tt><tt class="py-op">)</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">    <tt id="link-9" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-9', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">session</tt><tt class="py-op">.</tt><tt class="py-name">add</tt><tt class="py-op">(</tt><tt class="py-name">b3</tt><tt class="py-op">)</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">    <tt id="link-10" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-10', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">session</tt><tt class="py-op">.</tt><tt class="py-name">commit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+</div><a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"> </tt>
+<a name="getListAuthors"></a><div id="getListAuthors-def"><a name="L23"></a><tt class="py-lineno"> 23</tt> <a class="py-toggle" href="#" id="getListAuthors-toggle" onclick="return toggle('getListAuthors');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.books-module.html#getListAuthors">getListAuthors</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="getListAuthors-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="getListAuthors-expanded"><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-docstring">    Return a list of string containing every author of books in database, without duplication</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-docstring">    @return A list of string containing authors</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">    <tt class="py-name">list</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">    <tt id="link-11" class="py-name" targets="Module app.models.books=app.models.books-module.html,Variable app.models.orders.Order.books=app.models.orders.Order-class.html#books"><a title="app.models.books
+app.models.orders.Order.books" class="py-name" href="#" onclick="return doclink('link-11', 'books', 'link-11');">books</a></tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name"><a title="app.models.books.Book" class="py-name" href="#" onclick="return doclink('link-12', 'Book', 'link-2');">Book</a></tt><tt class="py-op">.</tt><tt class="py-name">query</tt><tt class="py-op">.</tt><tt class="py-name">all</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">book</tt> <tt class="py-keyword">in</tt> <tt id="link-13" class="py-name"><a title="app.models.books
+app.models.orders.Order.books" class="py-name" href="#" onclick="return doclink('link-13', 'books', 'link-11');">books</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">list</tt><tt class="py-op">.</tt><tt class="py-name">count</tt><tt class="py-op">(</tt><tt class="py-name">book</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Variable app.models.books.Book.author=app.models.books.Book-class.html#author"><a title="app.models.books.Book.author" class="py-name" href="#" onclick="return doclink('link-14', 'author', 'link-14');">author</a></tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">            <tt class="py-name">list</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">book</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name"><a title="app.models.books.Book.author" class="py-name" href="#" onclick="return doclink('link-15', 'author', 'link-14');">author</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">list</tt> </tt>
+</div><a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="getListBooks"></a><div id="getListBooks-def"><a name="L35"></a><tt class="py-lineno"> 35</tt> <a class="py-toggle" href="#" id="getListBooks-toggle" onclick="return toggle('getListBooks');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.books-module.html#getListBooks">getListBooks</a><tt class="py-op">(</tt><tt class="py-param">title</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">author</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">year</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="getListBooks-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="getListBooks-expanded"><a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">    Return a list of Book containing every book in database</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-docstring">    @type title: string</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">    @param title: If it's not None, filter the book on its title</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-docstring">    @type author: string</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-docstring">    @param author: If it's not None, filter the book on its author</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-docstring">    @type year: number</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-docstring">    @param year: If it's not None, filter the book on its year</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-docstring">    @return A list of Book object</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">    <tt class="py-name">list</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">    <tt id="link-16" class="py-name"><a title="app.models.books
+app.models.orders.Order.books" class="py-name" href="#" onclick="return doclink('link-16', 'books', 'link-11');">books</a></tt> <tt class="py-op">=</tt> <tt id="link-17" class="py-name"><a title="app.models.books.Book" class="py-name" href="#" onclick="return doclink('link-17', 'Book', 'link-2');">Book</a></tt><tt class="py-op">.</tt><tt class="py-name">query</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt id="link-18" class="py-name"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-18', 'title', 'link-3');">title</a></tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt> <tt class="py-keyword">and</tt> <tt id="link-19" class="py-name"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-19', 'title', 'link-3');">title</a></tt> <tt class="py-op">!=</tt> <tt class="py-string">""</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt id="link-20" class="py-name"><a title="app.models.books
+app.models.orders.Order.books" class="py-name" href="#" onclick="return doclink('link-20', 'books', 'link-11');">books</a></tt> <tt class="py-op">=</tt> <tt id="link-21" class="py-name"><a title="app.models.books
+app.models.orders.Order.books" class="py-name" href="#" onclick="return doclink('link-21', 'books', 'link-11');">books</a></tt><tt class="py-op">.</tt><tt class="py-name">filter</tt><tt class="py-op">(</tt><tt id="link-22" class="py-name"><a title="app.models.books.Book" class="py-name" href="#" onclick="return doclink('link-22', 'Book', 'link-2');">Book</a></tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-23', 'title', 'link-3');">title</a></tt><tt class="py-op">.</tt><tt class="py-name">contains</tt><tt class="py-op">(</tt><tt id="link-24" class="py-name"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-24', 'title', 'link-3');">title</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt id="link-25" class="py-name"><a title="app.models.books.Book.author" class="py-name" href="#" onclick="return doclink('link-25', 'author', 'link-14');">author</a></tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt> <tt class="py-keyword">and</tt> <tt id="link-26" class="py-name"><a title="app.models.books.Book.author" class="py-name" href="#" onclick="return doclink('link-26', 'author', 'link-14');">author</a></tt> <tt class="py-op">!=</tt> <tt class="py-string">""</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt id="link-27" class="py-name"><a title="app.models.books
+app.models.orders.Order.books" class="py-name" href="#" onclick="return doclink('link-27', 'books', 'link-11');">books</a></tt> <tt class="py-op">=</tt> <tt id="link-28" class="py-name"><a title="app.models.books
+app.models.orders.Order.books" class="py-name" href="#" onclick="return doclink('link-28', 'books', 'link-11');">books</a></tt><tt class="py-op">.</tt><tt class="py-name">filter</tt><tt class="py-op">(</tt><tt id="link-29" class="py-name"><a title="app.models.books.Book" class="py-name" href="#" onclick="return doclink('link-29', 'Book', 'link-2');">Book</a></tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="app.models.books.Book.author" class="py-name" href="#" onclick="return doclink('link-30', 'author', 'link-14');">author</a></tt><tt class="py-op">.</tt><tt class="py-name">contains</tt><tt class="py-op">(</tt><tt id="link-31" class="py-name"><a title="app.models.books.Book.author" class="py-name" href="#" onclick="return doclink('link-31', 'author', 'link-14');">author</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt id="link-32" class="py-name" targets="Variable app.models.books.Book.year=app.models.books.Book-class.html#year"><a title="app.models.books.Book.year" class="py-name" href="#" onclick="return doclink('link-32', 'year', 'link-32');">year</a></tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt> <tt class="py-keyword">and</tt> <tt id="link-33" class="py-name"><a title="app.models.books.Book.year" class="py-name" href="#" onclick="return doclink('link-33', 'year', 'link-32');">year</a></tt> <tt class="py-op">!=</tt> <tt class="py-string">""</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt id="link-34" class="py-name"><a title="app.models.books
+app.models.orders.Order.books" class="py-name" href="#" onclick="return doclink('link-34', 'books', 'link-11');">books</a></tt> <tt class="py-op">=</tt> <tt id="link-35" class="py-name"><a title="app.models.books
+app.models.orders.Order.books" class="py-name" href="#" onclick="return doclink('link-35', 'books', 'link-11');">books</a></tt><tt class="py-op">.</tt><tt class="py-name">filter_by</tt><tt class="py-op">(</tt><tt id="link-36" class="py-name"><a title="app.models.books.Book.year" class="py-name" href="#" onclick="return doclink('link-36', 'year', 'link-32');">year</a></tt> <tt class="py-op">=</tt> <tt id="link-37" class="py-name"><a title="app.models.books.Book.year" class="py-name" href="#" onclick="return doclink('link-37', 'year', 'link-32');">year</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">book</tt> <tt class="py-keyword">in</tt> <tt id="link-38" class="py-name"><a title="app.models.books
+app.models.orders.Order.books" class="py-name" href="#" onclick="return doclink('link-38', 'books', 'link-11');">books</a></tt><tt class="py-op">.</tt><tt class="py-name">all</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-name">list</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">book</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">list</tt> </tt>
+</div><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"> </tt>
+<a name="addBook"></a><div id="addBook-def"><a name="L58"></a><tt class="py-lineno"> 58</tt> <a class="py-toggle" href="#" id="addBook-toggle" onclick="return toggle('addBook');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.books-module.html#addBook">addBook</a><tt class="py-op">(</tt><tt class="py-param">title</tt><tt class="py-op">,</tt> <tt class="py-param">author</tt><tt class="py-op">,</tt> <tt class="py-param">year</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="addBook-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="addBook-expanded"><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">    Add a book to the database with its title, author and year and return True if it's done.</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">    @type title: string</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">    @type author: string</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">    @type year: number</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring">    @return True if the book is added, False otherwise</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt id="link-39" class="py-name"><a title="app.models.books.Book" class="py-name" href="#" onclick="return doclink('link-39', 'Book', 'link-2');">Book</a></tt><tt class="py-op">.</tt><tt class="py-name">query</tt><tt class="py-op">.</tt><tt class="py-name">filter_by</tt><tt class="py-op">(</tt><tt id="link-40" class="py-name"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-40', 'title', 'link-3');">title</a></tt><tt class="py-op">=</tt><tt id="link-41" class="py-name"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-41', 'title', 'link-3');">title</a></tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">first</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">False</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt class="py-name">b</tt> <tt class="py-op">=</tt> <tt id="link-42" class="py-name"><a title="app.models.books.Book" class="py-name" href="#" onclick="return doclink('link-42', 'Book', 'link-2');">Book</a></tt><tt class="py-op">(</tt><tt id="link-43" class="py-name"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-43', 'title', 'link-3');">title</a></tt><tt class="py-op">,</tt> <tt id="link-44" class="py-name"><a title="app.models.books.Book.author" class="py-name" href="#" onclick="return doclink('link-44', 'author', 'link-14');">author</a></tt><tt class="py-op">,</tt> <tt id="link-45" class="py-name"><a title="app.models.books.Book.year" class="py-name" href="#" onclick="return doclink('link-45', 'year', 'link-32');">year</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">    <tt id="link-46" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-46', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">session</tt><tt class="py-op">.</tt><tt class="py-name">add</tt><tt class="py-op">(</tt><tt class="py-name">b</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">    <tt id="link-47" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-47', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">session</tt><tt class="py-op">.</tt><tt class="py-name">commit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+</div><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"> </tt>
+<a name="removeBook"></a><div id="removeBook-def"><a name="L75"></a><tt class="py-lineno"> 75</tt> <a class="py-toggle" href="#" id="removeBook-toggle" onclick="return toggle('removeBook');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.books-module.html#removeBook">removeBook</a><tt class="py-op">(</tt><tt class="py-param">title</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="removeBook-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="removeBook-expanded"><a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">    Remove the book with title as title and return True if it's done</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">    @type title: string</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring">    @return True if the book is found and removed, False otherwise</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">    <tt class="py-name">book</tt> <tt class="py-op">=</tt> <tt id="link-48" class="py-name"><a title="app.models.books.Book" class="py-name" href="#" onclick="return doclink('link-48', 'Book', 'link-2');">Book</a></tt><tt class="py-op">.</tt><tt class="py-name">query</tt><tt class="py-op">.</tt><tt class="py-name">filter_by</tt><tt class="py-op">(</tt><tt id="link-49" class="py-name"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-49', 'title', 'link-3');">title</a></tt><tt class="py-op">=</tt><tt id="link-50" class="py-name"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-50', 'title', 'link-3');">title</a></tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">first</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">book</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">False</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">    <tt id="link-51" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-51', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">session</tt><tt class="py-op">.</tt><tt class="py-name">delete</tt><tt class="py-op">(</tt><tt class="py-name">book</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt id="link-52" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-52', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">session</tt><tt class="py-op">.</tt><tt class="py-name">commit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+</div><a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"> </tt>
+<a name="Book"></a><div id="Book-def"><a name="L90"></a><tt class="py-lineno"> 90</tt> <a class="py-toggle" href="#" id="Book-toggle" onclick="return toggle('Book');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="app.models.books.Book-class.html">Book</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Book-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Book-expanded"><a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring">    Represents a Book in the database with its title, as primary key, author and publication year.</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">    @author cachera - brabant</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">    <tt id="link-53" class="py-name" targets="Variable app.models.books.Book._tablename__=app.models.books.Book-class.html#_tablename__"><a title="app.models.books.Book._tablename__" class="py-name" href="#" onclick="return doclink('link-53', '_tablename__', 'link-53');">_tablename__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"book"</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt id="link-54" class="py-name"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-54', 'title', 'link-3');">title</a></tt> <tt class="py-op">=</tt> <tt id="link-55" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-55', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-56" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-56', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">64</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">    <tt id="link-57" class="py-name"><a title="app.models.books.Book.author" class="py-name" href="#" onclick="return doclink('link-57', 'author', 'link-14');">author</a></tt> <tt class="py-op">=</tt> <tt id="link-58" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-58', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-59" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-59', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">64</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">    <tt id="link-60" class="py-name"><a title="app.models.books.Book.year" class="py-name" href="#" onclick="return doclink('link-60', 'year', 'link-32');">year</a></tt> <tt class="py-op">=</tt> <tt id="link-61" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-61', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt id="link-62" class="py-name"><a title="app.db" class="py-name" href="#" onclick="return doclink('link-62', 'db', 'link-1');">db</a></tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"> </tt>
+<a name="Book.__init__"></a><div id="Book.__init__-def"><a name="L100"></a><tt class="py-lineno">100</tt> <a class="py-toggle" href="#" id="Book.__init__-toggle" onclick="return toggle('Book.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.books.Book-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">title</tt><tt class="py-op">,</tt> <tt class="py-param">author</tt><tt class="py-op">,</tt> <tt class="py-param">year</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Book.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Book.__init__-expanded"><a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-63', 'title', 'link-3');">title</a></tt> <tt class="py-op">=</tt> <tt id="link-64" class="py-name"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-64', 'title', 'link-3');">title</a></tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-65" class="py-name"><a title="app.models.books.Book.author" class="py-name" href="#" onclick="return doclink('link-65', 'author', 'link-14');">author</a></tt> <tt class="py-op">=</tt> <tt id="link-66" class="py-name"><a title="app.models.books.Book.author" class="py-name" href="#" onclick="return doclink('link-66', 'author', 'link-14');">author</a></tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-67" class="py-name"><a title="app.models.books.Book.year" class="py-name" href="#" onclick="return doclink('link-67', 'year', 'link-32');">year</a></tt> <tt class="py-op">=</tt> <tt id="link-68" class="py-name"><a title="app.models.books.Book.year" class="py-name" href="#" onclick="return doclink('link-68', 'year', 'link-32');">year</a></tt> </tt>
+</div><a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"> </tt>
+<a name="Book.__repr__"></a><div id="Book.__repr__-def"><a name="L105"></a><tt class="py-lineno">105</tt> <a class="py-toggle" href="#" id="Book.__repr__-toggle" onclick="return toggle('Book.__repr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.books.Book-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Book.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Book.__repr__-expanded"><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-docstring">'''</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">        Represents the book as a string</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">"[{}] {} by {}"</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-69" class="py-name"><a title="app.models.books.Book.year" class="py-name" href="#" onclick="return doclink('link-69', 'year', 'link-32');">year</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-70" class="py-name"><a title="app.models.books.Book.title" class="py-name" href="#" onclick="return doclink('link-70', 'title', 'link-3');">title</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-71" class="py-name"><a title="app.models.books.Book.author" class="py-name" href="#" onclick="return doclink('link-71', 'author', 'link-14');">author</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="app-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Apr 22 11:41:09 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
