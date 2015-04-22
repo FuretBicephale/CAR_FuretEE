@@ -6,7 +6,7 @@ def initUsers():
     Initializes the database with some users and return True if it's done, False if it was already done.
     @return True if users are successfully initialized, false otherwise.
     '''
-    if(not(User.query.filter_by(pseudo="ferret").first() is None)):
+    if(not(User.query.filter_by(pseudo="admin").first() is None)):
         return False
 
     addUser("admin", "admin", True)
