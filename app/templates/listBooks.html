@@ -38,9 +38,7 @@
       {% endif %}
       {% for book in list %}
         <tr>
-          <td>{{ book.title }}</td>
-          <td>{{ book.author }}</td>
-          <td>{{ book.year }}</td>
+          <td>{{ book.title }}</td><td>{{ book.author }}</td><td>{{ book.year }}</td>
           <td>
             <a href="{{ url_for('addBookToCart') }}?bookTitle={{ book.title }}"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
           </td>

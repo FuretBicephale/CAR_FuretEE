@@ -5,7 +5,7 @@ def initUsers():
     if(not(User.query.filter_by(pseudo="ferret").first() is None)):
         return False
 
-    addUser("ferret", "ferret", True)
+    addUser("admin", "admin", True)
 
     return True
 

@@ -27,8 +27,9 @@ def validateBook():
     '''
     Validate the entered book and add it to the database
     '''
-    print request.form['title']
-
+    if(not 'admin' in session or session['admin'] is False):
+        return redirect(url_for('index'))
+        
     try:
         year = int(request.form['year'])
     except ValueError:
@@ -71,7 +72,7 @@ def listBooks():
     list = books.getListBooks(title, author, year)
     return render_template("listBooks.html", title="Books", list=list)
 
-@app.route('/removeBook')
+@app.route('/listBooks/remove')
 def removeBook():
     if(not 'admin' in session or session['admin'] is False):
         return redirect(url_for('index'))

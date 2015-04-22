@@ -22,10 +22,10 @@ def register():
 
     if form.validate_on_submit():
         if(users.addUser(form.userPseudo.data, form.userPass.data)):
-            flash("User successfully registered")
+            flash("User successfully registered.")
             return redirect(url_for("index"))
         else:
-            flash("Username already used")
+            flash("Username already used.")
             return render_template("register.html", form=form)
 
     return render_template("register.html",
@@ -39,15 +39,19 @@ def login():
     if form.validate_on_submit():
         user = users.User.query.filter_by(pseudo=form.userPseudo.data).first()
         if(user is None):
-            flash("Username and password don't match")
+            flash("Username and password don't match.")
+            session['user'] = None
+            session['admin'] = None
             return render_template("login.html", form=form)
-        if(user.authenticate):
-            flash("User successfully logged in")
+        if(user.authenticate(form.userPass.data)):
+            flash("User successfully logged in.")
             session['user'] = form.userPseudo.data
             session['admin'] = user.isAdmin()
             return redirect(url_for("index"))
         else:
-            flash("Username and password don't match")
+            flash("Username and password don't match.")
+            session['user'] = None
+            session['admin'] = None
             return render_template("login.html", form=form)
 
     return render_template("login.html",
@@ -58,5 +62,5 @@ def login():
 def logout():
     session['user'] = None
     session['admin'] = None
-    flash("User logged out")
+    flash("User logged out.")
     return redirect(url_for('index'))

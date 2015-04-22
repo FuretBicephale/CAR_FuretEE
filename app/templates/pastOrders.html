@@ -14,7 +14,7 @@
       <th style="white-space:nowrap">See details</th>
       {% for userOrder in userOrders %}
         <tr>
-          <td style="width:99%">{{ userOrder.order_id }}</td>
+          <td style="width:99%">Order {{ userOrder.order_id }}</td>
           <td style="white-space:nowrap">
             <a href="{{ url_for('detailsOrder') }}?order={{ userOrder.order_id }}"><span class="glyphicon glyphicon-book" aria-hidden="true"></span></a>
           </td>
