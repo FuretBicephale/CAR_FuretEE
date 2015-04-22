@@ -3,6 +3,7 @@ from app import db
 def initBooks():
     '''
     Initializes the database with some books and return True if it's done, False if it was already done.
+    @return True if books are successfully initialized, false otherwise.
     '''
     if(not(Book.query.filter_by(title='Ferret Power').first() is None)):
         return False
@@ -20,6 +21,10 @@ def initBooks():
     return True
 
 def getListAuthors():
+    '''
+    Return a list of string containing every author of books in database, without duplication
+    @return A list of string containing authors
+    '''
     list = []
     books = Book.query.all()
     for book in books:
@@ -28,6 +33,16 @@ def getListAuthors():
     return list
 
 def getListBooks(title = None, author = None, year = None):
+    '''
+    Return a list of Book containing every book in database
+    @type title: string
+    @param title: If it's not None, filter the book on its title
+    @type author: string
+    @param author: If it's not None, filter the book on its author
+    @type year: number
+    @param year: If it's not None, filter the book on its year
+    @return A list of Book object
+    '''
     list = []
     books = Book.query
     if(title != None and title != ""):
@@ -41,6 +56,13 @@ def getListBooks(title = None, author = None, year = None):
     return list
 
 def addBook(title, author, year):
+    '''
+    Add a book to the database with its title, author and year and return True if it's done.
+    @type title: string
+    @type author: string
+    @type year: number
+    @return True if the book is added, False otherwise
+    '''
     if(Book.query.filter_by(title=title).first() is not None):
         return False
 
@@ -51,6 +73,11 @@ def addBook(title, author, year):
     return True
 
 def removeBook(title):
+    '''
+    Remove the book with title as title and return True if it's done
+    @type title: string
+    @return True if the book is found and removed, False otherwise
+    '''
     book = Book.query.filter_by(title=title).first()
     if(book is None):
         return False
@@ -63,6 +90,7 @@ def removeBook(title):
 class Book(db.Model):
     '''
     Represents a Book in the database with its title, as primary key, author and publication year.
+    @author cachera - brabant
     '''
     _tablename__ = "book"
     title = db.Column(db.String(64), primary_key=True)

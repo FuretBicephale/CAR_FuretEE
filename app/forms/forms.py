@@ -5,6 +5,7 @@ from wtforms.validators import DataRequired, EqualTo
 class BookForm(Form):
     '''
     Used to add a book in the website with its title, author and year of publication. Every fields are required.
+    @author cachera - brabant
     '''
     bookTitle = StringField('bookTitle', validators=[DataRequired()])
     bookAuthor = StringField('bookAuthor', validators=[DataRequired()])
@@ -12,7 +13,8 @@ class BookForm(Form):
 
 class RegisterForm(Form):
     '''
-    Used to register a new user  in the website with its pseudo, password and a confirmation of the password.
+    Used to register a new user in the website with its pseudo, password and a confirmation of the password.
+    @author cachera - brabant
     '''
     userPseudo = StringField('userPseudo', validators=[DataRequired()])
     userPass = PasswordField('userPass', validators=[
@@ -23,7 +25,8 @@ class RegisterForm(Form):
 
 class LoginForm(Form):
     '''
-    Used to log a user in the website
+    Used to log a user in the website with its pseudo and password. Every fields are required
+    @author cachera - brabant
     '''
     userPseudo = StringField('userPseudo', validators=[DataRequired()])
     userPass = PasswordField('userPass', validators=[DataRequired()])

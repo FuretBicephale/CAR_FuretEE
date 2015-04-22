@@ -5,6 +5,9 @@ from app.models import orders, users, books
 
 @app.route('/listBooks/addBookToCart')
 def addBookToCart():
+    '''
+    Adds a book to the cart of the user and creates the cart if it doesn't exist.
+    '''
     if(not "cart" in session):
         session["cart"] = []
 
@@ -34,6 +37,9 @@ def seeCart():
 
 @app.route('/seeCart/validateCart')
 def validateCart():
+    '''
+    Validate the cart of the user and create an order, if the user is logged in, link the order to his account.
+    '''
     orderId = orders.addOrder(session["cart"])
     if(orderId != -1):
         if("user" in session):
@@ -47,6 +53,9 @@ def validateCart():
 
 @app.route('/pastOrders')
 def pastOrders():
+    '''
+    List every past orders of a logged user.
+    '''
     if("user" not in session):
         return redirect(url_for("index"))
 

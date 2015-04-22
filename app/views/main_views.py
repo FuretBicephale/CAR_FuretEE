@@ -10,6 +10,9 @@ def index():
 
 @app.route('/initUsers')
 def initUsers():
+    '''
+    Initializes the database with some books.
+    '''
     if(users.initUsers()):
         flash("Users successfully initialized.")
     else:
@@ -34,6 +37,10 @@ def register():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    '''
+    Creates a form for the user to log in the website with its username and password.
+    If the form is validated, try to log the user in and tells him if it's done or not.
+    '''
     form = forms.LoginForm()
 
     if form.validate_on_submit():

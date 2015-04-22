@@ -9,6 +9,7 @@ def addBook():
     '''
     Creates a form for the user to add a new book with its title, author and year of publication.
     If the form is validated, displays entered information to the user before validation.
+    Only available for admin of the website.
     '''
     if(not 'admin' in session or session['admin'] is False):
         return redirect(url_for('index'))
@@ -25,11 +26,12 @@ def addBook():
 @app.route('/addBook/validate', methods=['GET', 'POST'])
 def validateBook():
     '''
-    Validate the entered book and add it to the database
+    Validate the entered book and add it to the database.
+    Only available for admin of the website.
     '''
     if(not 'admin' in session or session['admin'] is False):
         return redirect(url_for('index'))
-        
+
     try:
         year = int(request.form['year'])
     except ValueError:
@@ -45,7 +47,7 @@ def validateBook():
 @app.route('/initBooks')
 def initBooks():
     '''
-    Initializes the database with some books
+    Initializes the database with some books.
     '''
     if(books.initBooks()):
         flash("Books successfully initialized.")
@@ -64,7 +66,7 @@ def listAuthors():
 @app.route('/listBooks', methods=['GET', 'POST'])
 def listBooks():
     '''
-    Returns a list of the registered books as strings.
+    Returns a list of the registered books and filters them if the user asked to.
     '''
     title = request.args.get("title") or request.form.get("title")
     author = request.args.get("author") or request.form.get("author")
@@ -74,6 +76,10 @@ def listBooks():
 
 @app.route('/listBooks/remove')
 def removeBook():
+    '''
+    Remove a book from the website with its title.
+    Only available for admin of the website.
+    '''
     if(not 'admin' in session or session['admin'] is False):
         return redirect(url_for('index'))
 

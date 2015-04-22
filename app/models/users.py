@@ -2,6 +2,10 @@ from app import db
 from app.models import orders
 
 def initUsers():
+    '''
+    Initializes the database with some users and return True if it's done, False if it was already done.
+    @return True if users are successfully initialized, false otherwise.
+    '''
     if(not(User.query.filter_by(pseudo="ferret").first() is None)):
         return False
 
@@ -10,6 +14,14 @@ def initUsers():
     return True
 
 def addUser(pseudo, password, admin = False):
+    '''
+    Add a user to the database with its pseudo, password and admin status and return True if it's done.
+    @type pseudo: string
+    @type password: string
+    @type admin: boolean
+    @param admin: True if the user is an admin of the website, false otherwise
+    @return True if the user is added, False otherwise
+    '''
     if(not(User.query.filter_by(pseudo=pseudo).first() is None)):
         return False
 
@@ -21,7 +33,8 @@ def addUser(pseudo, password, admin = False):
 
 class UserOrder(db.Model):
     '''
-    Represents the association between a user and an order
+    Represents the association between a user and an order with the user pseudo and the order id
+    @author cachera - brabant
     '''
     __tablename__ = "user_order"
     user_pseudo = db.Column(db.String, db.ForeignKey("user.pseudo"), primary_key=True)
@@ -33,7 +46,8 @@ class UserOrder(db.Model):
 
 class User(db.Model):
     '''
-    Represents a registered user in the database with its pseudo, as primary key, pass and orders and defines if he's an admin or not.
+    Represents a registered user in the database with its pseudo, as primary key, pass and orders and its admin status
+    @author cachera - brabant
     '''
     __tablename__ = "user"
     pseudo = db.Column(db.String(64), primary_key=True)
@@ -47,12 +61,22 @@ class User(db.Model):
         self.admin = admin
 
     def authenticate(self, password):
+        '''
+        Authenticate the user if the password match with its password
+        @type password: string
+        @return True if the user is logged, false otherwise
+        '''
         return self.password == password
 
     def isAdmin(self):
         return self.admin
 
     def addOrder(self, orderId):
+        '''
+        Links an order to this user
+        @type orderId: number
+        @param orderId: the order to link to the user
+        '''
         userOrder = UserOrder(self.pseudo, orderId)
         db.session.add(userOrder)
         db.session.commit()
