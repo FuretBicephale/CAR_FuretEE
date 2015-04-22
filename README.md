@@ -1,4 +1,4 @@
-# Conception d'application réparties - Conception d'une application web
+﻿# Conception d'application réparties - Conception d'une application web
 #### Julien BRABANT - Nicolas CACHERA
 ###### 20/04/2015
 
@@ -48,9 +48,6 @@ Demande et renvoie de la liste des livres, filtrage par recherche inclus si dema
 ```
 @app.route('/listBooks', methods=['GET', 'POST'])
 def listBooks():
-    '''
-    Returns a list of the registered books and filters them if the user asked to.
-    '''
     title = request.args.get("title") or request.form.get("title")
     author = request.args.get("author") or request.form.get("author")
     year = request.args.get("year") or request.form.get("year")
