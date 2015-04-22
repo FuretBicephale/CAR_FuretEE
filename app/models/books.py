@@ -66,7 +66,7 @@ def addBook(title, author, year):
     if(Book.query.filter_by(title=title).first() is not None):
         return False
 
-    b = Book(title, author, year)
+    b = Book(title, author, int(year))
     db.session.add(b)
     db.session.commit()
 

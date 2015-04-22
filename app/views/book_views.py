@@ -33,15 +33,14 @@ def validateBook():
         return redirect(url_for('index'))
 
     try:
-        year = int(request.form['year'])
+        if(books.addBook(request.form['title'], request.form['author'], request.form['year'])):
+            flash("Book successfully added to the database.")
+        else:
+            flash("Book already added to the database.")
     except ValueError:
         flash("Invalid year.")
-        return redirect(url_for("index"))
+        return redirect(url_for("addBook"))
 
-    if(books.addBook(request.form['title'], request.form['author'], request.form['year'])):
-        flash("Book successfully added to the database.")
-    else:
-        flash("Book already added to the database.")
     return redirect(url_for("index"))
 
 @app.route('/initBooks')
